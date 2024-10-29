@@ -34,6 +34,10 @@ body {
     background-color: green;
 }
 
+.monster {
+    background-color: red; /* 몬스터 색상 */
+}
+
 #result {
     margin-top: 20px;
     font-size: 18px;
