@@ -2,107 +2,206 @@ const mazeElement = document.getElementById('maze');
 const resultElement = document.getElementById('result');
 
 const mazes = [
+
     [
+
         [0, 1, 0, 0, 0, 0, 1, 0, 1, 0],
+
         [0, 1, 1, 1, 0, 0, 1, 0, 1, 0],
+
         [0, 0, 0, 1, 0, 1, 1, 0, 0, 0],
+
         [1, 1, 0, 1, 0, 0, 0, 1, 1, 0],
+
         [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 2, 0],
+
     ],
+
     [
+
         [0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+
         [1, 1, 0, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+
         [0, 1, 1, 1, 1, 0, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+
         [0, 0, 0, 0, 1, 0, 0, 1, 1, 1],
+
         [0, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+
         [0, 0, 0, 0, 0, 1, 1, 1, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 2, 0],
+
     ],
+
     [
+
         [0, 1, 0, 0, 0, 1, 0, 0, 1, 0],
+
         [0, 1, 1, 1, 0, 1, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 0, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+
         [0, 0, 0, 0, 1, 0, 0, 1, 1, 1],
+
         [0, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+
         [0, 0, 0, 0, 0, 1, 1, 1, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 2, 0],
+
     ],
+
     [
+
         [0, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+
         [0, 0, 0, 1, 0, 1, 0, 1, 1, 0],
+
         [1, 1, 0, 1, 0, 1, 0, 0, 0, 0],
+
         [0, 0, 0, 0, 0, 1, 1, 1, 1, 0],
+
         [1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+
         [0, 0, 0, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 2, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+
 ]
+
 [
+
         [0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+
         [0, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+
         [1, 1, 1, 0, 0, 0, 0, 1, 0, 0],
+
         [0, 0, 0, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+
         [0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+
         [1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+
         [0, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+
         [0, 1, 1, 1, 0, 0, 0, 0, 2, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+
 ]
+
 [
+
         [0, 0, 0, 1, 1, 1, 1, 1, 1, 0],
+
         [1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 2, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+
 ]
+
 [
+
         [0, 0, 0, 0, 0, 1, 1, 1, 1, 0],
+
         [1, 1, 1, 1, 0, 0, 0, 0, 1, 0],
+
         [0, 0, 0, 0, 1, 1, 1, 0, 1, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+
         [1, 1, 1, 1, 0, 1, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+
         [2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+
 ]
+
 [
+
         [0, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+
         [0, 0, 0, 1, 0, 1, 0, 1, 1, 0],
+
         [1, 1, 0, 1, 0, 1, 0, 0, 0, 0],
+
         [0, 0, 0, 0, 0, 1, 1, 1, 1, 0],
+
         [1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+
         [0, 0, 0, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+
         [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+
         [0, 0, 0, 0, 0, 0, 0, 0, 2, 0],
+
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+
 ]
+
+
 
 ];
 
 let playerPosition = { x: 0, y: 0 };
 let monsterPosition = { x: 0, y: 0 };
+let currentMaze;
 
 function getRandomMaze() {
     return mazes[Math.floor(Math.random() * mazes.length)];
@@ -110,16 +209,16 @@ function getRandomMaze() {
 
 function drawMaze() {
     mazeElement.innerHTML = '';
-    const maze = getRandomMaze();
+    currentMaze = getRandomMaze();
 
-    for (let row = 0; row < maze.length; row++) {
-        for (let col = 0; col < maze[row].length; col++) {
+    for (let row = 0; row < currentMaze.length; row++) {
+        for (let col = 0; col < currentMaze[row].length; col++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
 
-            if (maze[row][col] === 1) {
+            if (currentMaze[row][col] === 1) {
                 cell.classList.add('wall');
-            } else if (maze[row][col] === 2) {
+            } else if (currentMaze[row][col] === 2) {
                 cell.classList.add('exit');
             }
 
@@ -140,17 +239,15 @@ function movePlayer(dx, dy) {
     const newX = playerPosition.x + dx;
     const newY = playerPosition.y + dy;
 
-    const maze = getRandomMaze();
-
     if (
-        newX >= 0 && newX < maze[0].length &&
-        newY >= 0 && newY < maze.length &&
-        maze[newY][newX] !== 1
+        newX >= 0 && newX < currentMaze[0].length &&
+        newY >= 0 && newY < currentMaze.length &&
+        currentMaze[newY][newX] !== 1
     ) {
         playerPosition.x = newX;
         playerPosition.y = newY;
 
-        if (maze[newY][newX] === 2) {
+        if (currentMaze[newY][newX] === 2) {
             resultElement.innerText = '탈출 성공!';
         }
 
@@ -170,5 +267,29 @@ function placeMonster(maze) {
     } while (maze[monsterPosition.y][monsterPosition.x] === 1 || (monsterPosition.x === playerPosition.x && monsterPosition.y === playerPosition.y));
 }
 
+// 게임 시작 시 초기화
+function startGame() {
+    playerPosition = { x: 0, y: 0 };
+    placeMonster(currentMaze);
+    drawMaze();
+}
+
 document.addEventListener('keydown', (event) => {
     switch (event.key) {
+        case 'ArrowUp':
+            movePlayer(0, -1);
+            break;
+        case 'ArrowDown':
+            movePlayer(0, 1);
+            break;
+        case 'ArrowLeft':
+            movePlayer(-1, 0);
+            break;
+        case 'ArrowRight':
+            movePlayer(1, 0);
+            break;
+    }
+});
+
+// 게임 시작
+startGame();
