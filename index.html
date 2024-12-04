@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swish</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="backgroundMusic" src="background.mp3" loop></audio>
+    <audio id="scoreSound" src="score.mp3"></audio>
+    <audio id="gameOverSound" src="gameover.mp3"></audio>
+    
+    <h1 id="gameTitle">Swish</h1>
+    <div id="difficultySelection">
+        <h2>DIFFICULTY</h2>
+        <button id="easyButton">EASY</button>
+        <button id="normalButton">NORMAL</button>
+        <button id="hardButton">HARD</button>
+        <button id="extremeButton">EXTREME</button>
+    </div>
+    
+    <canvas id="gameCanvas"></canvas>
+    <div id="gameOverScreen" class="hidden">
+        <h1>GAME OVER</h1>
+        <p id="finalScore"></p>
+        <button id="restartButton">RESTART?</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

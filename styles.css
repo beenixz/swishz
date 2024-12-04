@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #8B0000, #FF4500);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+#gameTitle {
+    font-size: 80px;
+    color: #FF4500;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+#difficultySelection {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+#difficultySelection h2 {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#difficultySelection button {
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#difficultySelection button:hover {
+    background-color: #FF6347;
+    transform: scale(1.05);
+}
+
+canvas {
+    border: 4px solid #000;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+#gameOverScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #8B0000, #FF4500);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+#gameOverScreen h1 {
+    font-size: 40px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#gameOverScreen p {
+    font-size: 26px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#restartButton {
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#restartButton:hover {
+    background-color: #C70039;
+    transform: scale(1.05);
+}
+
+#restartButton:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+#score, #level {
+    position: absolute;
+    font-size: 20px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#score {
+    top: 10px;
+    left: 10px;
+}
+
+#level {
+    top: 10px;
+    right: 10px;
+}
